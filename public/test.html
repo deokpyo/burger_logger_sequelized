@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- Materialize CSS Reference -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+	<!-- Materialize Icon Reference -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<title>Eat-Da-Burger!</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col s12 center">
+				<img src="https://cdn1.iconfinder.com/data/icons/shopping-colored-icons-vol-2/128/P-1-08-512.png" width="400">
+				<h2>Eat-Da-Burger!</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s6">
+				<h4>Current Burger List</h4>
+				<ul>
+					<!-- {{#each cats}} {{#unless this.sleepy}} -->
+					<li>
+						<!-- {{this.name}} -->
+
+						<form action="/{{this.id}}?_method=PUT" method="POST">
+							<input type="hidden" name="sleepy" value="true">
+							<button type="submit">SLEEP TIME!</button>
+						</form>
+
+						<!--  {{> cats/delete-cat}} -->
+					</li>
+					<!-- {{/unless}} {{/each}} -->
+				</ul>
+			</div>
+			<div class="col s6">
+				<h4>Devoured Burger List</h4>
+				<ul>
+					<!-- {{#each cats}} {{#if this.sleepy}} -->
+					<li>
+						<!-- {{this.name}} -->
+
+						<form action="/{{this.id}}?_method=PUT" method="POST">
+							<input type="hidden" name="sleepy" value="false">
+							<button type="submit">WAKE UP!</button>
+						</form>
+
+						<!-- {{> cats/delete-cat}} -->
+					</li>
+					<!-- {{/if}} {{/each}} -->
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 center">
+				<h2>Add a Cat</h2>
+				<form class="create-update-form" action="/" method="POST">
+
+					<div class="form-group">
+						<label for="ca">Cat Name:</label>
+						<input type="text" id="ca" name="name">
+					</div>
+
+					<div class="form-group">
+						<label for="slee">Sleepy?</label><br>
+						<input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
+						<input type="radio" name="sleepy" value="0"> Awake
+					</div>
+
+					<button type="submit">Add Cat</button>
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- jQuery Reference -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<!-- Javascript Reference -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+</body>
+
+</html>

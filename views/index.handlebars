@@ -1,0 +1,61 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12 center">
+			<img src="assets/img/doublecheeese.jpg" width="400">
+			<h2>EAT DA BURGER</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s6">
+			<h4>BURGER MENU</h4>
+			<ul>
+				{{#each burgers}} {{#unless this.devoured}}
+				<li>
+					<div class="row">
+						<div class="col s12">
+							<div class="card horizontal">
+								<div class="card-image">
+									<img class="pattie" src="assets/img/patties1.png">
+								</div>
+								<div class="card-stacked">
+									<div class="card-content">
+										<p>{{this.burger_name}}</p>
+									</div>
+										<input type="hidden" name="devoured" value="true">
+
+										<div class="card-action center">
+											<a ><button class="devour" type="submit" data-id="{{this.id}}">DEVOUR</button></a>
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				{{/unless}} {{/each}}
+			</ul>
+		</div>
+		<div class="col s6">
+			<h4>DEVOURED BURGERS</h4>
+			<ul>
+				{{#each burgers}} {{#if this.devoured}}
+				<li>
+					{{this.burger_name}}
+				</li>
+				{{/if}} {{/each}}
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12 center">
+			<h3>ADD A BURGER</h3>
+			<form class="create-update-form">
+
+				<div class="form-group">
+					<label for="burger">Burger Name:</label>
+					<input type="text" id="burger" name="name">
+				</div>
+				<button id="submit" class="waves-effect waves-light btn-large" type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>

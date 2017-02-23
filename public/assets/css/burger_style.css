@@ -1,0 +1,61 @@
+body {
+	background: #48BEFE;	
+}
+
+h4 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 22pt;
+	color: #213E57;
+	text-align: center;
+
+}
+
+h3 {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 20pt;
+		color: #E6F4FF;
+}
+
+h2 {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 40pt;
+		color: #D6ECFF;
+
+}
+
+img {
+	margin-bottom: -80px;
+}
+
+.btn {
+	background: #1974C1;
+}
+
+.waves-effect:hover {
+	background-color: #609ACC;
+}
+
+
+.btn-large {
+	background: #1974C1;
+}
+
+label {
+	font-family: 'Montserrat', sans-serif;
+	color: #213E57;
+}
+
+.pattie {
+	margin: 25px;
+}
+
+.card-image {
+	align-self: center;
+}
+
+
+
+
+
+
+
