@@ -21,11 +21,13 @@
 									<div class="card-content">
 										<p>{{this.burger_name}}</p>
 									</div>
+									<form action="/api/update/{{this.id}}?_method=PUT" method="POST">
 										<input type="hidden" name="devoured" value="true">
 
 										<div class="card-action center">
-											<a ><button class="devour" type="submit" data-id="{{this.id}}">DEVOUR</button></a>
+                      <a><button type="submit">DEVOUR</button></a>
 										</div>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -48,7 +50,7 @@
 	<div class="row">
 		<div class="col s12 center">
 			<h3>ADD A BURGER</h3>
-			<form class="create-update-form">
+			<form class="create-update-form" action="/api/create" method="POST">
 
 				<div class="form-group">
 					<label for="burger">Burger Name:</label>

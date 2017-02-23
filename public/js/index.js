@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    function updatePage() {
+        console.log("page");
+        $.get("/api/get", function () {
+            console.log("done");
+        });
+    }
+
     // Event listeners
     $("#submit").on("click", function () {
         // if any burger name is empty, alert the user
@@ -11,22 +18,26 @@ $(document).ready(function () {
             var burger = {
                 name: burger_name,
             }
-            $.post("/create", burger, function(){
+            $.post("/api/create", burger, function (data) {
+                console.log("Created" + data);
+                updatePage();
             })
         }
     });
-    
-    $("button.devour").on("click", function (){
+
+    $("button.devour").on("click", function () {
         var burger_id = $(this).data("id");
         var burger = {
             id: burger_id
         };
         $.ajax({
             method: "PUT",
-            url: "/update",
+            url: "/api/update",
             data: burger
-        }).done(function(){
-            //location.reload();
+        }).done(function (data) {
+            console.log("Updated" + data);
+            updatePage();
         });
     });
+
 });
